@@ -1,0 +1,23 @@
+[
+    {
+        "CPF": "00000000011",
+        "nome": "João da Silva",
+        "email": "joao.silva@example.com",
+        "senha": "senha_joao",
+        "data_nascimento": "2001-01-01"
+    },
+    {
+        "CPF": "00000000022",
+        "nome": "Maria Oliveira",
+        "email": "maria.oliveira@example.com",
+        "senha": "senha_maria",
+        "data_nascimento": "2002-02-02"
+    },
+    {
+        "CPF": "00000000033",
+        "nome": "Pedro Santos",
+        "email": "pedro.santos@example.com",
+        "senha": "senha_pedro",
+        "data_nascimento": "2003-03-03"
+    }
+] 
