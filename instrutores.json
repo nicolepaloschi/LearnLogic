@@ -1,0 +1,18 @@
+[
+    {
+        "CPF": "000.000.000-22",
+        "nome": "Instrutor 1",
+        "email": "instrutor1@gmail.com",
+        "senha": "instrutor123",
+        "data_nascimento": "2000/01/01",
+        "id_certificacao": "1"
+    },
+    {
+        "CPF": "000.000.000-33",
+        "nome": "Instrutor 2",
+        "email": "instrutor2@gmail.com",
+        "senha": "instrutor321",
+        "data_nascimento": "2000/01/01",
+        "id_certificacao": "2"
+    }
+]
