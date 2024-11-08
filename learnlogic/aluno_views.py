@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.exceptions import APIException
+from django_filters import rest_framework as filters
 
 from .models import Aluno
 from .serializers import AlunoSerializer
@@ -57,3 +58,12 @@ class AlunoView(APIView):
             )
         except Aluno.DoesNotExist:
             return Response({'error': 'Aluno não encontrado'}, status=status.HTTP_404_NOT_FOUND)
+
+class AlunoFilter(filters.FilterSet):
+    aluno = filters.CharFilter(field_name="aluno__nome", lookup_expr='icontains')
+
+class AlunoListView(generics.ListAPIView):
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer
+    # filter_backend = (filters.DjangoFilterBackend)
+    filter_class = AlunoFilter
