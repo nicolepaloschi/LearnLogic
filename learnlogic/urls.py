@@ -2,6 +2,7 @@ from django.urls import path
 from .aluno_views import AlunoView
 from .instrutor_views import InstrutorView
 from .disciplina_views import DisciplinaView
+from .user_view import UserRegisterAPIView 
 
 urlpatterns = [
     # Alunos
@@ -9,10 +10,14 @@ urlpatterns = [
     path('alunos/<int:pk>/', AlunoView.as_view(), name='aluno-detail'), # Para GET, PUT e DELETE em detalhe
 
     # Instrutores
-    path('instrutores/', InstrutorView.as_view()),
+    path('instrutores/', InstrutorView.as_view(), name='instrutores'),
     path('instrutores/<int:pk>/', InstrutorView.as_view()),
 
     # Disciplinas
-    path('disciplinas/', DisciplinaView.as_view()),
-    path('disciplinas/<int:pk>/', DisciplinaView.as_view())
+    path('disciplinas/', DisciplinaView.as_view(), name='disciplina'),
+    path('disciplinas/<int:pk>/', DisciplinaView.as_view()),
+
+    #url para registro de usuário
+    path('register/', UserRegisterAPIView.as_view(), name='user-register'),
+
 ]
