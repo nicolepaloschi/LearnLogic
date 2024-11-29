@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import APIException
+from rest_framework.permissions import AllowAny 
+from rest_framework import generics
 
 from .models import Disciplina
 from .serializers import DisciplinaSerializer
@@ -50,3 +52,22 @@ class DisciplinaView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Disciplina.DoesNotExist:
             return Response({'error': 'Disciplina não encontrada'}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+class DisciplinaListView(generics.ListAPIView):
+    queryset = Disciplina.objects.all()
+    serializer_class = DisciplinaSerializer
+    #filter_backends = (filters.DjangoFilterBackend,)
+    #filter_class = DisciplinaFilter
+    permission_classes =[IsAuthenticated] #garante que o usuário está autenticado
+
+    def get_queryset(self):
+        """
+        Filtra as disciplinas para retornar apenas as relacionadas ao usuário logado.
+        """
+        usuario_logado= self.request.user
+
+
+        # Considerando que o modelo Disciplina tem uma relação com Professor, que por sua vez se relaciona com User
+        return Disciplina.objects.filter(instrutor__user=usuario_logado)

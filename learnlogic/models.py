@@ -1,15 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import User
 
+"""
+    Objetivos da aula: ter uma própria classe User do Django
+    Podemos adidiconar informações para esse usuário, assim temos duas opções, usar herança ou o relacionamento por chave estrangeira
+"""
 
 class Aluno(models.Model):
+    #adicionando chave estrangeira de usuario
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='aluno_profile')
     CPF = models.CharField(max_length=11, null=False)
-    nome = models.CharField(max_length=200, null=False)
-    email = models.EmailField(max_length=254, null=False)
-    senha = models.CharField(max_length=64, null=False)
     data_nascimento = models.DateField(null=False)
+
+    # --> Retirar da tabela, pois já existe em User
+    # nome = models.CharField(max_length=200, null=False) 
+    # email = models.EmailField(max_length=254, null=False)
+    # senha = models.CharField(max_length=64, null=False)
+
     
     def __str__(self):
-        return self.nome
+        return self.user.get_full_name() or self.user.username
 
 class Certificacao(models.Model):
     titulo = models.CharField(max_length=200, null=False)
@@ -19,16 +29,19 @@ class Certificacao(models.Model):
     def __str__(self):
         return self.titulo
 
-class Instrutor(models.Model):
+class Instrutor(models.Model): # a mesma coisa será aplicada aqui
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='instrutor_profile')
     CPF = models.CharField(max_length=11)
-    nome = models.CharField(max_length=200, null=False)
-    email = models.EmailField(max_length=254, null=False)
     data_nascimento = models.DateField(null=False)
-    senha = models.CharField(max_length=64, null=False)
     id_certificacao = models.ForeignKey(Certificacao, on_delete=models.CASCADE)
+
+    # --> Retirar da tabela, pois já existe em User
+    # nome = models.CharField(max_length=200, null=False) 
+    # email = models.EmailField(max_length=254, null=False)
+    # senha = models.CharField(max_length=64, null=False)
     
     def __str__(self):
-        return self.nome
+        return self.user.get_full_name() or self.user.username
 
 class Material(models.Model):
     instrutor = models.ForeignKey(Instrutor, on_delete=models.CASCADE)

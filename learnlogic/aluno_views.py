@@ -59,11 +59,12 @@ class AlunoView(APIView):
         except Aluno.DoesNotExist:
             return Response({'error': 'Aluno não encontrado'}, status=status.HTTP_404_NOT_FOUND)
 
+
 class AlunoFilter(filters.FilterSet):
     aluno = filters.CharFilter(field_name="aluno__nome", lookup_expr='icontains')
 
 class AlunoListView(generics.ListAPIView):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
-    # filter_backend = (filters.DjangoFilterBackend)
+    filter_backend = (filters.DjangoFilterBackend)
     filter_class = AlunoFilter

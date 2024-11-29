@@ -4,9 +4,38 @@ from .models import Aluno, Instrutor, Disciplina
 
 
 class AlunoSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.username')
+    email = serializers.EmailField(source='user.email')
+    first_name = serializers.CharField(source='user.first_name')
+    last_name = serializers.CharField(source='user.last_name')
+    password = serializers.CharField(write_only=True, source='user.password', required=True, style={'input_type': 'password'})
+
     class Meta:
         model = Aluno
-        fields = '__all__'
+        fields = ['username', 'email', 'first_name', 'last_name', 'password', 'data_nascimento', 'CPF']
+
+    def create(self, validated_data):
+        # Extrai os campos do User diretamente do validated_data
+        user_data = {
+            'username': validated_data.pop('username'),
+            'email': validated_data.pop('email'),
+            'first_name': validated_data.pop('first_name'),
+            'last_name': validated_data.pop('last_name'),
+            'password': validated_data.pop('password'),
+        }
+        # Cria um usuário com os dados
+        user = User.objects.create_user(
+            username = user_data['username'],
+            email = user_data['email'],
+            first_name = user_data['first_name'],
+            last_name = user_data['last_name'],
+            password =user_data['password']
+        )
+
+        #Cria um aluno vinculado ao usuário
+        aluno = Aluno.objects.create(user=user, **validated_data)
+
+        return aluno
 
 
 class InstrutorSerializer(serializers.ModelSerializer):
