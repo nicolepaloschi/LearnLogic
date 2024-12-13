@@ -7,7 +7,7 @@ from .render_view import first_page, dashboard_view
 
 urlpatterns = [
     #render pages
-    path('firstpage/', first_page, name='first_page'),
+    path('', first_page, name='first_page'),
     path('dashboard/', dashboard_view, name='dashboard'),
 
     # Alunos
