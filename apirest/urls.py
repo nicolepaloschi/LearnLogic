@@ -20,6 +20,6 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/learnlogic/', include('learnlogic.urls')),
+    path('', include('learnlogic.urls')),
     path('auth/', obtain_auth_token, name='api_token_auth'), #autenticação com token
 ]
