@@ -1,221 +1,130 @@
-* {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f8fb;
-    color: #2b2b2b;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
 }
 
+/* Navegação */
 nav {
-    background-color: #1e293b;
-    padding: 0.5rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-brand {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    color: #60a5fa !important;
-    font-size: 1.5rem;
-}
-
-.navbar-nav .nav-link {
-    color: #e2e8f0;
+    background: #30174D;
+    color: #fff;
     padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+nav .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+nav .nav-link {
+    text-decoration: none;
+    color: #fff;
     transition: color 0.3s ease;
 }
-
-.navbar-nav .nav-link:hover {
-    color: #60a5fa;
+nav .nav-link:hover {
+    color: #2CABA3;
 }
 
-.navbar-toggler-icon {
-    background-color: #e2e8f0;
-}
-
-/* Hero Section */
 .masthead {
-    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    background: #30174D url('/static/images/hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
-    padding: 100px 0;
     text-align: center;
-    position: relative;
+    padding: 4rem 1rem;
 }
-
 .masthead h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.masthead p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-}
-
-.masthead img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    border: 8px solid #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Seção Sobre */
-.page-section {
-    padding: 60px 0;
-    background-color: #f4f8fb;
-}
-
-.page-section h2 {
     font-size: 2.5rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+}
+.masthead p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.masthead .btn-primary {
+    background: #2CABA3;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+.masthead .btn-primary:hover {
+    background: #27A193;
 }
 
-.page-section hr.divider {
-    width: 60px;
+/* Seções Gerais */
+.page-section {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #30174D;
+}
+.page-section .divider {
+    width: 80px;
     height: 3px;
-    background-color: #2563eb;
-    margin: 20px auto;
-    border-radius: 3px;
+    background: #30174D;
+    margin: 0.5rem auto 1.5rem;
+    border: none;
 }
 
 /* Seção de Materiais */
-#services .row {
+.row {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
-
-#services .col-lg-4 {
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.col-lg-4 {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-#services .col-lg-4:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.col-lg-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-#services .col-lg-4 .mb-2 {
-    font-size: 3rem;
-    color: #2563eb;
+.col-lg-4 h3 {
+    color: #30174D;
+    margin-bottom: 0.5rem;
 }
-
-#services h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin: 10px 0;
-}
-
-#services p {
-    font-size: 1rem;
-    color: #475569;
-    margin-bottom: 10px;
-}
-
-#services a {
-    color: #2563eb;
-    font-weight: 500;
+.col-lg-4 a {
+    color: #2CABA3;
     text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
-
-#services a:hover {
-    color: #1e40af;
+.col-lg-4 a:hover {
+    color: #27A193;
 }
 
+/* Rodapé */
 footer {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.875rem;
-}
-
-.btn-primary {
-    background-color: #2563eb;
-    border-color: #2563eb;
+    background: #30174D;
     color: #fff;
-    padding: 12px 24px;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #1e40af;
-    transform: scale(1.05);
-}
-
-.btn-secondary {
-    background-color: #f4f8fb;
-    border-color: #cbd5e1;
-    color: #1e293b;
-    padding: 12px 24px;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #e2e8f0;
-    transform: scale(1.05);
-}
-
-#services .col-lg-4 img {
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Média Queries - Ajustes em telas menores */
-@media (max-width: 768px) {
-    .masthead {
-        padding: 50px 0;
-    }
-
-    .masthead h1 {
-        font-size: 2.5rem;
-    }
-
-    .masthead p {
-        font-size: 1rem;
-    }
-
-    .page-section h2 {
-        font-size: 2rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.875rem;
-    }
-
-    #services .row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary, .btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }
