@@ -3,12 +3,12 @@ from .aluno_views import AlunoView
 from .instrutor_views import InstrutorView
 from .disciplina_views import DisciplinaView
 from .user_view import UserRegisterAPIView 
-from .render_view import first_page, home_view
+from .render_view import first_page, dashboard_view
 
 urlpatterns = [
     #render pages
-    path('firstpage/', first_page, name='first_page')
-    path('home/', home_view, name='home')
+    path('firstpage/', first_page, name='first_page'),
+    path('dashboard/', dashboard_view, name='dashboard'),
 
     # Alunos
     path('alunos/', AlunoView.as_view(), name='aluno-list-create'), # Para POST e GET em lista
@@ -23,6 +23,6 @@ urlpatterns = [
     path('disciplinas/<int:pk>/', DisciplinaView.as_view()),
 
     #url para registro de usuário
-    path('register/', UserRegisterAPIView.as_view(), name='user-register'),
+    path('register/', UserRegisterAPIView.as_view(), name='user-register')
 
 ]

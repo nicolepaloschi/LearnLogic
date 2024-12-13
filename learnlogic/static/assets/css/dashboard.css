@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.libre-baskerville-regular {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  .libre-baskerville-bold {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+  .libre-baskerville-regular-italic {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+body{
+    display: flex;
+}
+
+/* Sidebar - Menu lateral */
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 140px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: linear-gradient(135deg, #2CABA3, #30174D);
+}
+
+.sidebar:hover{
+    width: 390px;
+    transition: 0.5s;
+}
+
+.logo{
+    height: 90px;
+    padding: 5px;
+}
+
+.menu{
+    height: 80%;
+    position: relative;
+    list-style: none;
+    padding: 8px;
+}
+
+.menu li{
+    padding: initial;
+    margin: 50px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    padding: 10px 0 10px 15px;
+}
+
+.menu li:hover{
+    background: #e0e0e058;
+}
+
+.menu a{
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span{
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.2rem;
+}
+
+.logout{
+    position: absolute;
+    border: 0;
+    left: 0;
+    width: 100%;
+}
+ 
+/*Main body section*/
+.main--content{
+    position: relative;
+    background: #e0e0e058;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header--wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.header--wrapper img{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.header-title{
+    color: rgba(113, 99, 186, 255);
+}
+
+.user--info{
+    display: flex;
+    align-items: center;
+    gap: 1;
+}
+
+.search--box{
+    background: rgba(237, 237, 237);
+    border-radius: 15px;
+    color: rgba(113, 99, 186, 255);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 12px;
+}
+
+.search--box input{
+    background: transparent;
+    padding: 10px;
+}
+
+.search--box i{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.search--box i:hover{
+    transform: scale(1.2);
+}
+
+/* Card container */
+h1 {
+    color: #30174D;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.activity {
+    background: rgba(229, 223, 223);
+    padding: 2.5rem; 
+    border-radius: 10px;
+    width: 480px;
+    /*padding: 2.5rem;*/
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.5s ease-in-out;
+}
+
+.activity img {
+    width: 100px; /* Aumenta a largura da imagem */
+    height: 100px; /* Aumenta a altura da imagem */
+    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.activity h2 {
+    font-size: 30px; /* Aumenta o tamanho do texto do título */
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.activity p {
+    font-size: 25px; /* Aumenta o tamanho do texto do parágrafo */
+    color: #30174D;
+    text-align: center;
+    text-decoration:solid ;
+}
+
+.btn{
+    display: block; /* Muda para block para garantir que ocupa a largura disponível */
+    padding: 10px 130px;
+    background: #2CABA3;
+    color: #fff;
+    border-radius: 0.5rem;
+    margin-top: 15px; /* Afastamento do texto */
+    text-align: center; /* Centraliza o texto dentro do botão */
+}
