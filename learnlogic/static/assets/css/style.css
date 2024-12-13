@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f8fb;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #1e293b;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #60a5fa !important;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #60a5fa;
+}
+
+.navbar-toggler-icon {
+    background-color: #e2e8f0;
+}
+
+/* Hero Section */
+.masthead {
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.masthead h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.masthead p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.masthead img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção Sobre */
+.page-section {
+    padding: 60px 0;
+    background-color: #f4f8fb;
+}
+
+.page-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.page-section hr.divider {
+    width: 60px;
+    height: 3px;
+    background-color: #2563eb;
+    margin: 20px auto;
+    border-radius: 3px;
+}
+
+/* Seção de Materiais */
+#services .row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#services .col-lg-4 {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#services .col-lg-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#services .col-lg-4 .mb-2 {
+    font-size: 3rem;
+    color: #2563eb;
+}
+
+#services h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 10px 0;
+}
+
+#services p {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+#services a {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#services a:hover {
+    color: #1e40af;
+}
+
+footer {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #f4f8fb;
+    border-color: #cbd5e1;
+    color: #1e293b;
+    padding: 12px 24px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.05);
+}
+
+#services .col-lg-4 img {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Média Queries - Ajustes em telas menores */
+@media (max-width: 768px) {
+    .masthead {
+        padding: 50px 0;
+    }
+
+    .masthead h1 {
+        font-size: 2.5rem;
+    }
+
+    .masthead p {
+        font-size: 1rem;
+    }
+
+    .page-section h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.875rem;
+    }
+
+    #services .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
